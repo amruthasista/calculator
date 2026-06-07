@@ -1,0 +1,35 @@
+import tkinter as tk
+
+def add():
+    result.config(text=f"result:{int(input1.get())+int(input2.get())}")
+def subtract():
+    result.config(text=f"result:{int(input1.get())-int(input2.get())}")
+def multiply():
+    result.config(text=f"result:{int(input1.get())*int(input2.get())}")
+def divide():
+    result.config(text=f"result:{int(input1.get())/int(input2.get())}")
+calculator=tk.Tk()
+calculator.geometry("10000x10000")
+calculator.title("Calculator")
+calculator.config(bg="white")
+label=tk.Label(calculator, text="Welcome to the smart calculator!:)",fg="white",bg="black")
+label.pack()
+input1=tk.Entry(calculator)
+input1.place(x=1600,y=50)
+label2=tk.Label(calculator, text="Number1", fg="white",bg="black",font=(16))
+label2.place(x=1500,y=50)
+input2=tk.Entry(calculator)
+input2.place(x=1600,y=100)
+label2=tk.Label(calculator, text="Number 2",fg="white",bg="black",font=(16))
+label2.place(x=1500,y=100)
+button=tk.Button(calculator, text="add", fg="white",bg="black",command=add)
+button.place(x=1500,y=150)
+button1=tk.Button(calculator, text="subtract", fg="white", bg="black",command=subtract)
+button1.place(x=1600,y=150)
+button2=tk.Button(calculator, text="multiply",fg="white", bg="black",command=multiply)
+button2.place(x=1700,y=150)
+button3=tk.Button(calculator, text="divide", fg="white", bg="black",command=divide)
+button3.place(x=1800,y=150)
+result=tk.Label(calculator, text='', fg='black', bg='white')
+result.place(x=1500,y=200)
+calculator.mainloop() 
